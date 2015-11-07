@@ -98,7 +98,7 @@ $ rm -rf  temp_git </code></pre></li>
 </ul>
 <h2 id="exploring-history"><a href="05-history.html">Exploring History</a></h2>
 <ul>
-<li><p>One thing may cause confusion is recovering old versions. If, instead of doing <code>$ git checkout f22b25e mars.txt</code>, someone does <code>$ git checkout f22b25e</code>, they wind up in the “detached HEAD” state and confusion abounds. It’s then possible to keep on committing, but things like <code>git push origin master</code> a bit later will not give easily comprehensible results. It also makes it look like commits can be lost. To “fix” a “detached HEAD”, simply <code>git checkout master</code>.</p></li>
+<li><p>One thing may cause confusion is recovering old versions. If, instead of doing <code>$ git checkout f22b25e mars.txt</code>, someone does <code>$ git checkout     f22b25e</code>, they wind up in the “detached HEAD” state and confusion abounds. It’s then possible to keep on committing, but things like <code>git push origin     master</code> a bit later will not give easily comprehensible results. It also makes it look like commits can be lost. To “fix” a “detached HEAD”, simply <code>git checkout master</code>.</p></li>
 <li><p>This is a good moment to show a log within a Git GUI. If you skip it because you’re short on time, show it once in GitHub.</p></li>
 </ul>
 <h2 id="ignoring-things"><a href="06-ignore.html">Ignoring Things</a></h2>
@@ -122,7 +122,7 @@ $ rm -rf  temp_git </code></pre></li>
 <li>To fix a wrong alias, you can do <code>git remote rename &lt;old&gt; &lt;new&gt;</code>.</li>
 <li>To fix a wrong URL, you can do <code>git remote set-url &lt;alias&gt; &lt;newurl&gt;</code>.</li>
 </ul></li>
-<li><p>Before cloning the repo, be sure that nobody is inside another repo. The best way to achieve this is moving to the <code>Desktop</code> before cloning: <code>cd &amp;&amp; cd Desktop</code>.</p></li>
+<li><p>Before cloning the repo, be sure that nobody is inside another repo. The best way to achieve this is moving to the <code>Desktop</code> before cloning: <code>cd &amp;&amp;     cd Desktop</code>.</p></li>
 <li><p>If both repos are in the <code>Desktop</code>, have them to clone their collaborator repo under a given directory using a second argument:</p>
 <pre class="input"><code>$ git clone https://github.com/vlad/planets.git vlad-planet`</code></pre></li>
 <li><p>The most common mistake is that learners <code>push</code> before <code>pull</code>ing. If they <code>pull</code> afterward, they may get a conflict.</p></li>
