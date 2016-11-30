@@ -63,7 +63,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 352 bytes, done.
 Total 3 (delta 1), reused 0 (delta 0)
-To https://gitlab.com/vlad/planets
+To git@gitlab.com:vlad/planets
    29aba7c..dabb4c8  master -&gt; master</code></pre>
 <p>Now let’s have the other partner make a different change to their copy <em>without</em> updating from GitLab:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> mars.txt
@@ -79,9 +79,9 @@ $ <span class="kw">git</span> commit -m <span class="st">&quot;Adding a line in 
  1 file changed, 1 insertion(+)</code></pre>
 <p>but Git won’t let us push it to GitLab:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre>
-<pre class="output"><code>To https://gitlab.com/vlad/planets.git
+<pre class="output"><code>To git@gitlab.com:vlad/planets.git
  ! [rejected]        master -&gt; master (non-fast-forward)
-error: failed to push some refs to &#39;https://gitlab.com/vlad/planets.git&#39;
+error: failed to push some refs to &#39;git@gitlab.com:vlad/planets.git&#39;
 hint: Updates were rejected because the tip of your current branch is behind
 hint: its remote counterpart. Merge the remote changes (e.g. &#39;git pull&#39;)
 hint: before pushing again.
@@ -95,7 +95,7 @@ hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; fo
 remote: Compressing objects: 100% (2/2), done.        
 remote: Total 3 (delta 1), reused 3 (delta 1)        
 Unpacking objects: 100% (3/3), done.
-From https://gitlab.com/vlad/planets
+From git@gitlab.com:vlad/planets
  * branch            master     -&gt; FETCH_HEAD
 Auto-merging mars.txt
 CONFLICT (content): Merge conflict in mars.txt
@@ -137,7 +137,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
 Writing objects: 100% (6/6), 697 bytes, done.
 Total 6 (delta 2), reused 0 (delta 0)
-To https://gitlab.com/vlad/planets.git
+To git@gitlab.com:vlad/planets.git
    dabb4c8..2abf2b1  master -&gt; master</code></pre>
 <p>Git keeps track of what we’ve merged with what, so we don’t have to fix things by hand again when the collaborator who made the first change pulls again:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> pull origin master</code></pre>
@@ -145,7 +145,7 @@ To https://gitlab.com/vlad/planets.git
 remote: Compressing objects: 100% (4/4), done.        
 remote: Total 6 (delta 2), reused 6 (delta 2)        
 Unpacking objects: 100% (6/6), done.
-From https://gitlab.com/vlad/planets
+From git@gitlab.com:vlad/planets
  * branch            master     -&gt; FETCH_HEAD
 Updating dabb4c8..2abf2b1
 Fast-forward
