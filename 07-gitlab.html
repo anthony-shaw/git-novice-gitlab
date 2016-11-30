@@ -66,25 +66,24 @@ $ <span class="kw">git</span> init</code></pre>
 <div class="figure">
 <img src="fig/gitlab-find-repo-string.png" alt="Where to Find Repository URL on GitLab" /><p class="caption">Where to Find Repository URL on GitLab</p>
 </div>
-<p>Click on the ‘HTTPS’ link to change the <a href="reference.html#protocol">protocol</a> from SSH to HTTPS.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
 <h2><span class="glyphicon glyphicon-pushpin"></span>HTTPS vs SSH</h2>
 </div>
 <div class="panel-body">
-<p>We use HTTPS here because it does not require additional configuration. After the workshop you may want to set up SSH access, which is a bit more secure, by following one of the great tutorials from <a href="https://help.github.com/articles/generating-ssh-keys">GitHub</a>, <a href="https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git">Atlassian/BitBucket</a> and <a href="https://about.gitlab.com/2014/03/04/add-ssh-key-screencast/">GitLab</a> (this one has a screencast).</p>
+<p>We will use SSH here because it is more secure. The setup will require some work, but can be done using this <a href="http://git.ccfe.ac.uk/help/ssh/README.md">tutorial</a></p>
 </div>
 </aside>
 <div class="figure">
 <img src="fig/gitlab-change-repo-string.png" alt="Changing the Repository URL on GitLab" /><p class="caption">Changing the Repository URL on GitLab</p>
 </div>
 <p>Copy that URL from the browser, go into the local <code>planets</code> repository, and run this command:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote add origin https://gitlab.com/vlad/planets.git</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote add origin git@gitlab.com:vlad/planets.git</code></pre>
 <p>Make sure to use the URL for your repository rather than Vlad’s: the only difference should be your username instead of <code>vlad</code>.</p>
 <p>We can check that the command has worked by running <code>git remote -v</code>:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote -v</code></pre>
-<pre class="output"><code>origin   https://gitlab.com/vlad/planets.git (push)
-origin   https://gitlab.com/vlad/planets.git (fetch)</code></pre>
+<pre class="output"><code>origin   git@gitlab.com:vlad/planets.git (push)
+origin   git@gitlab.com:vlad/planets.git (fetch)</code></pre>
 <p>The name <code>origin</code> is a local nickname for your remote repository: we could use something else if we wanted to, but <code>origin</code> is by far the most common choice.</p>
 <p>Once the nickname <code>origin</code> is set up, this command will push the changes from our local repository to the repository on GitLab:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre>
@@ -93,7 +92,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
 Writing objects: 100% (9/9), 821 bytes, done.
 Total 9 (delta 2), reused 0 (delta 0)
-To https://gitlab.com/vlad/planets
+To git@gitlab.com:vlad/planets
  * [new branch]      master -&gt; master
 Branch master set up to track remote branch master from origin.</code></pre>
 <aside class="callout panel panel-info">
@@ -133,7 +132,7 @@ $ <span class="kw">git</span> config --global --unset https.proxy</code></pre>
 </aside>
 <p>We can pull changes from the remote repository to the local one as well:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> pull origin master</code></pre>
-<pre class="output"><code>From https://gitlab.com/vlad/planets
+<pre class="output"><code>From git@gitlab.com:vlad/planets
  * branch            master     -&gt; FETCH_HEAD
 Already up-to-date.</code></pre>
 <p>Pulling has no effect in this case because the two repositories are already synchronized. If someone else had pushed some changes to the repository on GitLab, though, this command would download them to our local repository.</p>
