@@ -63,17 +63,10 @@ the string we need to identify it:
 
 ![Where to Find Repository URL on GitLab](fig/gitlab-find-repo-string.png)
 
-Click on the 'HTTPS' link to change the [protocol](reference.html#protocol) from SSH to HTTPS.
-
 > ## HTTPS vs SSH {.callout}
 >
-> We use HTTPS here because it does not require additional configuration.
-> After the workshop you may want to set up SSH access, which is a bit more
-> secure, by following one of the great tutorials from
-> [GitHub](https://help.github.com/articles/generating-ssh-keys),
-> [Atlassian/BitBucket](https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git)
-> and [GitLab](https://about.gitlab.com/2014/03/04/add-ssh-key-screencast/)
-> (this one has a screencast).
+> We will use SSH here because it is more secure.
+> The setup will require some work, but can be done using this [tutorial](http://git.ccfe.ac.uk/help/ssh/README.md)
 
 ![Changing the Repository URL on GitLab](fig/gitlab-change-repo-string.png)
 
@@ -82,7 +75,7 @@ go into the local `planets` repository,
 and run this command:
 
 ~~~ {.bash}
-$ git remote add origin https://gitlab.com/vlad/planets.git
+$ git remote add origin git@gitlab.com:vlad/planets.git
 ~~~
 
 Make sure to use the URL for your repository rather than Vlad's:
@@ -94,8 +87,8 @@ We can check that the command has worked by running `git remote -v`:
 $ git remote -v
 ~~~
 ~~~ {.output}
-origin   https://gitlab.com/vlad/planets.git (push)
-origin   https://gitlab.com/vlad/planets.git (fetch)
+origin   git@gitlab.com:vlad/planets.git (push)
+origin   git@gitlab.com:vlad/planets.git (fetch)
 ~~~
 
 The name `origin` is a local nickname for your remote repository:
@@ -115,7 +108,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
 Writing objects: 100% (9/9), 821 bytes, done.
 Total 9 (delta 2), reused 0 (delta 0)
-To https://gitlab.com/vlad/planets
+To git@gitlab.com:vlad/planets
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 ~~~
@@ -169,7 +162,7 @@ We can pull changes from the remote repository to the local one as well:
 $ git pull origin master
 ~~~
 ~~~ {.output}
-From https://gitlab.com/vlad/planets
+From git@gitlab.com:vlad/planets
  * branch            master     -> FETCH_HEAD
 Already up-to-date.
 ~~~
