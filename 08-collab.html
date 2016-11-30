@@ -52,7 +52,7 @@
 <img src="fig/gitlab-add-members.png" alt="Adding members on GitLab" /><p class="caption">Adding members on GitLab</p>
 </div>
 <p>The Collaborator needs to work on this project locally. He or she should <code>cd</code> to another directory (so <code>ls</code> doesn’t show a <code>planets</code> folder), and then make a copy of the Owner’s repository:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> clone https://gitlab.com/vlad/planets.git</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> clone git@gitlab.com:vlad/planets.git</code></pre>
 <p>Replace ‘vlad’ with the Owner’s username.</p>
 <p><code>git clone</code> creates a fresh local copy of a remote repository.</p>
 <div class="figure">
@@ -74,7 +74,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 306 bytes, done.
 Total 3 (delta 0), reused 0 (delta 0)
-To https://gitlab.com/vlad/planets.git
+To git@gitlab.com:vlad/planets.git
    9272da5..29aba7c  master -&gt; master</code></pre>
 <p>Note that we didn’t have to create a remote called <code>origin</code>: Git does this automatically, using that name, when we clone a repository. (This is why <code>origin</code> was a sensible choice earlier when we were setting up remotes by hand.)</p>
 <p>We can now download changes into the original repository on our machine:</p>
@@ -83,7 +83,7 @@ To https://gitlab.com/vlad/planets.git
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 3 (delta 0)
 Unpacking objects: 100% (3/3), done.
-From https://gitlab.com/vlad/planets
+From git@gitlab.com:vlad/planets
  * branch            master     -&gt; FETCH_HEAD
 Updating 9272da5..29aba7c
 Fast-forward
